@@ -58,9 +58,9 @@ public ResponseEntity<String > updateInvestor(InvestorRequest investorRequest) {
 		 log.info(msgBuilder.append("Attemping to updated investor  service").toString());
 	
 	
-		 investorService.saveInvestor(investorRequest);
+		 investorService.updateInvestor(investorRequest);
 	log.info(msgBuilder.append("sucessfully  updated investor ").toString());
-	 return ResponseEntity.ok("investor has created");
+	 return ResponseEntity.ok("investor has updated");
 
 	}
 	catch (Exception e) {

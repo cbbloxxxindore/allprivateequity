@@ -101,7 +101,7 @@ throw (new MyPrivateEquityException(" something gone wrong"));
 	Investor getInvestor( InvestorRequest investorRequest)
 	 {
 		 Investor investor= new Investor();
-		 investor.setInvestorId(123);
+		 investor.setInvestorId(investorRequest.getInvestorId());
 		 investor.setEndDate(LocalDateTime.now());
 		 investor.setInvestorLegalName(investorRequest.getInvestorLegalName());
 		 investor.setInvestorShortName(investorRequest.getInvestorShortName());

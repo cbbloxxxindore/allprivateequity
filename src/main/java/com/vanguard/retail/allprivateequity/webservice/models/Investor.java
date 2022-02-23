@@ -23,7 +23,7 @@ public class Investor {
 
 	@NotBlank
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private int investorId;
 	@NotNull
 	private String versionId;

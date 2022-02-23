@@ -1,6 +1,7 @@
 package com.vanguard.retail.allprivateequity.webservice.models;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,9 @@ import lombok.ToString;
 public class InvestorRequest {
 
 public static final String REQUIRED_FIELD="value cant be null or empty";
-	
+@NotNull(message =REQUIRED_FIELD )
+private int investorId;
+
 	@NotBlank(message =REQUIRED_FIELD )
  private String  limitedPartnerId;
 	@NotBlank(message =REQUIRED_FIELD )
