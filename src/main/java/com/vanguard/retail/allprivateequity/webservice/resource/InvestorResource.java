@@ -52,7 +52,7 @@ public class InvestorResource {
 	 }
 
 @PutMapping("/investors")
-public ResponseEntity<String > updateInvestor(InvestorRequest investorRequest) {
+public ResponseEntity<String > updateInvestor(@RequestBody @Valid InvestorRequest investorRequest) {
 	StringBuilder msgBuilder= new StringBuilder(CLASS_NAME).append("::"+SAVE_METHOD);
 	try {
 		 log.info(msgBuilder.append("Attemping to updated investor  service").toString());
@@ -77,12 +77,13 @@ public ResponseEntity<Investor > getIvestorByID(  @PathVariable Integer investor
 		 log.info(msgBuilder.append("Attemping to get investor by id in  service layer").toString());
 	
 	Optional<Investor> optional=investorService.getIvestorByID(investorId);
+	if (optional.isEmpty()) {
+		throw (new MyPrivateEquityException(" investor is not avilable"));
+
+	}
+
 	Investor investor=optional.get();
 	log.info(msgBuilder.append("sucessfully  get investor by id ").toString());
-if (optional.isEmpty()) {
-	throw (new MyPrivateEquityException(" investor is not avilable"));
-
-}
 return ResponseEntity.ok(investor);
 
 	}
