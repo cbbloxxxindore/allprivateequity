@@ -71,18 +71,19 @@ throw (new MyPrivateEquityException("unprocessable entity"));
 }
 
 @GetMapping("/investors/{investorId}")
-public ResponseEntity<String > getIvestorByID(  @PathVariable Integer investorId) {
+public ResponseEntity<Investor > getIvestorByID(  @PathVariable Integer investorId) {
 	StringBuilder msgBuilder= new StringBuilder(CLASS_NAME).append("::"+SAVE_METHOD);
 	try {
 		 log.info(msgBuilder.append("Attemping to get investor by id in  service layer").toString());
 	
 	Optional<Investor> optional=investorService.getIvestorByID(investorId);
+	Investor investor=optional.get();
 	log.info(msgBuilder.append("sucessfully  get investor by id ").toString());
 if (optional.isEmpty()) {
 	throw (new MyPrivateEquityException(" investor is not avilable"));
 
 }
-return ResponseEntity.ok("investor has updated");
+return ResponseEntity.ok(investor);
 
 	}
 	catch (Exception e) {
