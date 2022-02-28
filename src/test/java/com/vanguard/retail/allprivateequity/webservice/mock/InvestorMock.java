@@ -63,4 +63,21 @@ public interface InvestorMock {
 		 return investors;
 		 
 	 }
+	public static  Investor  getInvestor1()
+	 {
+		 Investor investor= new Investor();
+		 investor.setInvestorId(getInvestorRequest().getInvestorId());
+		 investor.setEndDate(LocalDateTime.now());
+		 investor.setInvestorLegalName(getInvestorRequest().getInvestorLegalName());
+		 investor.setInvestorShortName(getInvestorRequest().getInvestorShortName());
+		 investor.setInvestorStatus("Active");
+		 investor.setLimitedPartnerId(getInvestorRequest().getLimitedPartnerId());
+		 investor.setParentInvestorId(getInvestorRequest().getParentInvestorId());
+		 investor.setVersionId("1212");
+		 investor.setVbaAccountNumber("1212");
+		 investor.setPoid("234");
+		 investor.setParentLongName(getInvestorRequest().getParentLongName());
+		 return investor;
+		 
+	 }
 }

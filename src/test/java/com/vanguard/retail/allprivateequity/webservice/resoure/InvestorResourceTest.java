@@ -1,6 +1,12 @@
 package com.vanguard.retail.allprivateequity.webservice.resoure;
 
 import static org.junit.Assert.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.when;
+
+import java.util.List;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,7 +14,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.jdbc.support.incrementer.SybaseAnywhereMaxValueIncrementer;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.vanguard.retail.allprivateequity.webservice.exception.MyPrivateEquityException;
@@ -17,15 +22,6 @@ import com.vanguard.retail.allprivateequity.webservice.models.Investor;
 import com.vanguard.retail.allprivateequity.webservice.models.InvestorRequest;
 import com.vanguard.retail.allprivateequity.webservice.resource.InvestorResource;
 import com.vanguard.retail.allprivateequity.webservice.service.InvestorService;
-import static org.mockito.Mockito.doThrow;
-
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.when;
-
-import java.util.List;
-import java.util.Optional;
-
-import static org.mockito.ArgumentMatchers.any;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
