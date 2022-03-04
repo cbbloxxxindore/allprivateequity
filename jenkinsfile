@@ -3,24 +3,24 @@ pipeline {
     stages {
         stage('git repo & clean') {
             steps {
-              // bat "rmdir  /s /q allprivateequity2"
+              // bat "rmdir  /s /q allprivateequity"
                 bat "git clone https://github.com/cbbloxxxindore/allprivateequity.git"
-                bat "mvn clean -f allprivateequity2"
+                bat "mvn clean -f allprivateequity"
             }
         }
         stage('install') {
             steps {
-                bat "mvn install -f allprivateequity2"
+                bat "mvn install -f allprivateequity"
             }
         }
         stage('test') {
             steps {
-                bat "mvn test -f allprivateequity2"
+                bat "mvn test -f allprivateequity"
             }
         }
         stage('package') {
             steps {
-                bat "mvn package -f allprivateequity2"
+                bat "mvn package -f allprivateequity"
             }
         }
     }
