@@ -2,8 +2,7 @@ pipeline {
 environment {
 
     PATH = "C:\\WINDOWS\\SYSTEM32"
-C:\\Program Files\Git\bin
-
+    PATH= " C:\Program Files\Git\bin"
 
 }
     agent any
