@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+        stage('git repo & clean') {
+            steps {
+              // bat "rmdir  /s /q allprivateequity2"
+                bat "git clone https://github.com/cbbloxxxindore/allprivateequity.git"
+                bat "mvn clean -f allprivateequity2"
+            }
+        }
+        stage('install') {
+            steps {
+                bat "mvn install -f allprivateequity2"
+            }
+        }
+        stage('test') {
+            steps {
+                bat "mvn test -f allprivateequity2"
+            }
+        }
+        stage('package') {
+            steps {
+                bat "mvn package -f allprivateequity2"
+            }
+        }
+    }
+}
