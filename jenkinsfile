@@ -1,9 +1,5 @@
 pipeline {
-environment {
 
-    PATH = "C:\WINDOWS\SYSTEM32"
-
-}
     agent any
     stages {
         stage('git repo & clean') {
